@@ -31,7 +31,7 @@ Getting Started
   init({
         divId          : canvasID,
         time           : timefortransition,
-        randomColor    : true,
+        randomColor    : false,
         colorPrimary   : PrimaryColor,
         colorSecondary : SecondaryColor'
       });
