@@ -3,7 +3,7 @@ Is a Pure Javascript Canvas Implementation of Matrix Grid ( Primary Application 
 
 
 
-#Check Out Demo 
+#Check Out Demo
 http://argunner.github.io/minBlock.js/
 
 #Usage
@@ -19,7 +19,7 @@ Getting Started
   init('canvasId',time);
   //here "time" defines the Delay between two transitions
 ````
-  
+
 ####Fixed Color
 ```js
   init('canvasID',time,true,'colorPrimary','colorSecondary');
@@ -29,11 +29,11 @@ Getting Started
 ####Pause ( This'll make sure that Matrix Does Not Changes In a Loop )
 ```js
   init('canvasID',time,false,'init will ignore this','init will ignore this',true);
-  
+
   ```
 
 #Not Yet Implemented
-1. Making it Sensitive for nxn Matrix 
-2. Simplifying Arguments To JSON format 
+1. Making it Sensitive for nxn Matrix
+2. ~~Simplifying Arguments To JSON format~~
 3. Minifying the source
 

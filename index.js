@@ -2,7 +2,7 @@
 /* Copyright (C) argunner (gunnerar7@gmail.com)
  * Written by http://github.com/argunner
  * Under MIT Lisence
- * Contributors : Add Your Name Here
+ * Contributors : Alvaro Pinot @alvaropinot http://github.com/alvaropinot
  */
 function putSquare(ctx, x, y, height, width, color) {
 
@@ -109,28 +109,42 @@ function getRandomInt(min, max) {
 
 
 //var timestamp = new Date().getUTCMilliseconds();
-function init(divID, time, randomColor, colorPrimary, colorSecondary, pause) {
-    if (!randomColor) {
-        randomColor = false;
+function init(config) {
+
+    config = config || {};
+    /*defaults = {
+        divId :
+        time :
+        randomColor : false,
+        colorPrimary :
+        colorSecondary :
+        pause : false
+    }*/
+
+    if(!config.divId) {
+        return;
     }
-    if (!pause) {
-        pause = false;
+
+    if (!config.randomColor) {
+        config.randomColor = false;
+    }
+    if (!config.pause) {
+        config.pause = false;
     }
     var buffer = new Date().getUTCMilliseconds();
     var colors = ['#1abc9c', '#2ecc71', '#3498db', '#9b59b6', '#f1c40f', '#e67e22', '#e74c3c'];
 
-    if (!randomColor) {
+    if (!config.randomColor) {
         var colorPrimary = colors[Math.floor(Math.random() * colors.length)];
         var colorSecondary = colors[Math.floor(Math.random() * colors.length)];
         while (colorSecondary == colorPrimary) {
             colorSecondary = colors[Math.floor(Math.random() * colors.length)];
         }
     } else {
-
-        var colorPrimary = colorPrimary;
-        var colorSecondary = colorSecondary;
+        var colorPrimary = config.colorPrimary;
+        var colorSecondary = config.colorSecondary;
     }
-    var canvas = document.getElementById(divID);
+    var canvas = document.getElementById(config.divId);
     canvas.style.background = colorPrimary;
     var ctx = canvas.getContext('2d');
     var canvasWidth = canvas.width;
@@ -140,7 +154,7 @@ function init(divID, time, randomColor, colorPrimary, colorSecondary, pause) {
     var buffer
     populateMatrix(ctx, canvasWidth, canvasHeight, padding, blockStack, colorSecondary);
 
-    if (!pause) {
+    if (!config.pause) {
         setInterval(function() {
 
             //colorPrimary = colors[Math.floor(Math.random() * colors.length)];
@@ -152,7 +166,7 @@ function init(divID, time, randomColor, colorPrimary, colorSecondary, pause) {
             populateMatrix(ctx, canvasWidth, canvasHeight, padding, blockStack, colorSecondary);
             splitnFill(ctx, canvasWidth, canvasHeight, padding, blockStack, colorPrimary, timestamp);
 
-        }, time);
+        }, config.time);
     } else {
 
         var timestamp = getRandomInt(0, 900);
