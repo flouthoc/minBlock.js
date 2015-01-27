@@ -56,5 +56,5 @@ Getting Started
 #Not Yet Implemented
 1. Making it Sensitive for nxn Matrix
 2. ~~Simplifying Arguments To JSON format~~ [by @alvaropinot](https://github.com/alvaropinot)
-3. Minifying the source
+
 
