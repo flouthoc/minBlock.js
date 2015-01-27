@@ -249,11 +249,25 @@ init('CanvasDivID',timeinerval,true,'color1','color2');
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
     </script>
     <script type="text/javascript">
-      init('myCanvas',300,true,'#27ae60','#2ecc71');
+      init({
+        divId          : 'myCanvas',
+        time           : 300,
+        randomColor    : true,
+        colorPrimary   : '#27ae60',
+        colorSecondary : '#2ecc71'
+      });
+
     </script>
     <script type="text/javascript">
       function change(){
-        init('myCanvasTwo',300,false,'#27ae60','#2ecc71',true);
+        init({
+          divId          : 'myCanvasTwo',
+          time           : 300,
+          randomColor    : false,
+          colorPrimary   : '#27ae60',
+          colorSecondary : '#2ecc71',
+          pause: true
+        });
       } window.onload = function(){
         change();
       }
