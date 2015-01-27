@@ -16,24 +16,45 @@ Getting Started
 
 ####Regular
 ```js
-  init('canvasId',time);
+  init({
+        divId          : canvasID,
+        time           : timefortransition,
+        randomColor    : true,
+        colorPrimary   : PrimaryColor,
+        colorSecondary : SecondaryColor'
+      });
   //here "time" defines the Delay between two transitions
 ````
 
 ####Fixed Color
 ```js
-  init('canvasID',time,true,'colorPrimary','colorSecondary');
+  init({
+        divId          : canvasID,
+        time           : timefortransition,
+        randomColor    : true,
+        colorPrimary   : PrimaryColor,
+        colorSecondary : SecondaryColor'
+      });
+
 
 ```
 
 ####Pause ( This'll make sure that Matrix Does Not Changes In a Loop )
 ```js
-  init('canvasID',time,false,'init will ignore this','init will ignore this',true);
+   init({
+          divId          : CanvasId,
+          time           : 300,
+          randomColor    : true,
+          colorPrimary   : primaryColor,
+          colorSecondary : secondaryColor,
+          pause: true
+        });
+
 
   ```
 
 #Not Yet Implemented
 1. Making it Sensitive for nxn Matrix
-2. ~~Simplifying Arguments To JSON format~~
+2. ~~Simplifying Arguments To JSON format~~ [by @alvaropinot](https://github.com/alvaropinot)
 3. Minifying the source
 
