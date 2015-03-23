@@ -4,12 +4,12 @@ Is a Pure Javascript Canvas Implementation of Matrix Grid ( Primary Application 
 
 
 #Check Out Demo
-http://argunner.github.io/minBlock.js/
+http://flouthoc.github.io/minBlock.js/
 
 #Usage
 Getting Started
 ```html
-<script type="text/javascript" src="https://raw.githubusercontent.com/argunner/minBlock.js/master/index.js"></script>
+<script type="text/javascript" src="https://raw.githubusercontent.com/flouthoc/minBlock.js/master/index.js"></script>
 ```
 
 #Usage

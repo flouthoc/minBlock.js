@@ -1,6 +1,6 @@
 /*----------------------minBlock.js------------*/
-/* Copyright (C) argunner (gunnerar7@gmail.com)
- * Written by http://github.com/argunner
+/* Copyright (C) flouthoc (gunnerar7@gmail.com)
+ * Written by http://github.com/flouthoc
  * Under MIT Lisence
  * Contributors : Alvaro Pinot @alvaropinot http://github.com/alvaropinot
  */
