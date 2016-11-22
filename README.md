@@ -15,7 +15,7 @@ Getting Started
 #Usage
 
 ####Regular
-```js
+<pre><code>
   init({
         divId          : canvasID,
         time           : timefortransition,
@@ -24,10 +24,10 @@ Getting Started
         colorSecondary : SecondaryColor'
       });
   //here "time" defines the Delay between two transitions
-````
+</code></pre>
 
 ####Fixed Color
-```js
+<pre><code>
   init({
         divId          : canvasID,
         time           : timefortransition,
@@ -35,12 +35,10 @@ Getting Started
         colorPrimary   : PrimaryColor,
         colorSecondary : SecondaryColor'
       });
+</code></pre>
 
-
-```
-
-####Pause ( This'll make sure that Matrix Does Not Changes In a Loop )
-```js
+####Pause ( This'll make sure that Matrix Does Not Change In a Loop )
+<pre><code>
    init({
           divId          : CanvasId,
           time           : 300,
@@ -49,12 +47,8 @@ Getting Started
           colorSecondary : secondaryColor,
           pause: true
         });
-
-
-  ```
+</code></pre>
 
 #Not Yet Implemented
 1. Making it Sensitive for nxn Matrix
 2. ~~Simplifying Arguments To JSON format~~ [by @alvaropinot](https://github.com/alvaropinot)
-
-
