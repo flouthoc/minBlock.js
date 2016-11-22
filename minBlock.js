@@ -2,7 +2,9 @@
 /* Copyright (C) flouthoc (gunnerar7@gmail.com)
  * Written by http://github.com/flouthoc
  * Under MIT Lisence
- * Contributors : Alvaro Pinot @alvaropinot http://github.com/alvaropinot
+ * Contributors :
+ * Alvaro Pinot @alvaropinot http://github.com/alvaropinot
+ * GreenLantern101 https://github.com/GreenLantern101
  */
 
 var minBlock = function(config) {
@@ -12,7 +14,9 @@ var minBlock = function(config) {
     }
 
     //private vars
-    var blockStack = 5;
+    var blockStack = config.numBlocks;
+    //number of blocks per edge must be at least three
+    blockStack = Math.max(blockStack, 3);
 
     var canvas = document.getElementById(config.divId);
     var canvasWidth = canvas.width;
@@ -26,13 +30,6 @@ var minBlock = function(config) {
     var squareHeight = Height / blockStack;
     var squareWidth = Width / blockStack;
 
-
-    if (!config.randomColor) {
-        config.randomColor = false;
-    }
-    if (!config.pause) {
-        config.pause = false;
-    }
     var colors = ['#1abc9c', '#2ecc71', '#3498db', '#9b59b6', '#f1c40f', '#e67e22', '#e74c3c'];
 
     //TODO: make light/dark colors? contrasting combo
@@ -59,32 +56,29 @@ var minBlock = function(config) {
     } else {
         refresh();
     }
-
+    //generate a new random matrix
     function refresh() {
         var timestamp = getRandomInt(0, 900);
         fillMatrix(colorSecondary);
-        splitnFill(colorPrimary, timestamp);
+        randFill(colorPrimary, timestamp);
     }
     //fills entire matrix a single color
     function fillMatrix(color) {
         for (var i = 0; i < blockStack; i++) {
             for (var j = 0; j < blockStack; j++) {
-                enlight(color, j, i);
+                drawSquare(color, j, i);
             }
         }
     }
-
-    function putSquare(x, y, color) {
+    //draws a single color square
+    function drawSquare(color, matrixX, matrixY) {
+        var x = padding + (matrixX * squareWidth);
+        var y = padding + (matrixY * squareHeight);
         ctx.beginPath();
         ctx.fillStyle = color;
         ctx.rect(x, y, squareWidth, squareHeight);
         ctx.fill();
         ctx.closePath();
-    }
-    //lights a single square a color
-    function enlight(color, matrixX, matrixY) {
-        putSquare(padding + (matrixX * squareWidth),
-            padding + (matrixY * squareHeight), color);
     }
 
     function getLocation(number) {
@@ -93,17 +87,20 @@ var minBlock = function(config) {
         return [a, b];
     }
 
-    function splitnFill(color, number) {
+    function randFill(color, number) {
         //converts number into an array of its digits
-        var digits = String(number).split('').map(Number);
-
-        for (var i = 0; i < digits.length; i++) {
-            var coordinate = getLocation(digits[i]);
-            enlight(color, coordinate[1], coordinate[0]);
+        //var digits = String(number).split('').map(Number);
+        var numBlocksReplace = getRandomInt(blockStack * blockStack * .25, blockStack * blockStack * .75);
+        for (var i = 0; i < numBlocksReplace; i++) {
+            var coordinate = getLocation(getRandomInt(0, blockStack * blockStack - 1));
+            drawSquare(color, coordinate[1], coordinate[0]);
         }
     }
 
     function getRandomInt(min, max) {
+        //force integers
+        min = Math.ceil(min);
+        max = Math.floor(max);
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 }
