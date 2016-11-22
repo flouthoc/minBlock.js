@@ -51,6 +51,6 @@ Getting Started
         });
 </code></pre>
 
-#Not Yet Implemented
-1. Making it Sensitive for nxn Matrix
+#Todos
+1. ~~Making it Sensitive for nxn MatrixFF~~ [by @GreenLantern101](https://github.com/GreenLantern101)
 2. ~~Simplifying Arguments To JSON format~~ [by @alvaropinot](https://github.com/alvaropinot)
