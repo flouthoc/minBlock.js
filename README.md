@@ -1,9 +1,8 @@
 # minBlock.js
-Is a Pure Javascript Canvas Implementation of Matrix Grid ( Primary Application was to Generate Github Like Random Avatar using minBlock.js or Pixel Pattern)
+A pure javascript implementation of Matrix Grid ( used to generate Github-like random avatars)
 
 
-
-#Check Out Demo
+#Demo
 http://flouthoc.github.io/minBlock.js/
 
 #Usage
@@ -14,47 +13,44 @@ Getting Started
 
 #Usage
 
-####Regular
-```js
-  init({
+####Random Color
+<pre><code>
+  demo = new minBlock({
         divId          : canvasID,
         time           : timefortransition,
+        numBlocks      : number of blocks per edge
         randomColor    : true,
         colorPrimary   : PrimaryColor,
         colorSecondary : SecondaryColor'
       });
-  //here "time" defines the Delay between two transitions
-````
+  //"time" defines the Delay between two transitions
+</code></pre>
 
 ####Fixed Color
-```js
-  init({
+<pre><code>
+  demo = new minBlock({
         divId          : canvasID,
         time           : timefortransition,
+        numBlocks      : number of blocks per edge
         randomColor    : false,
         colorPrimary   : PrimaryColor,
         colorSecondary : SecondaryColor'
       });
+</code></pre>
 
-
-```
-
-####Pause ( This'll make sure that Matrix Does Not Changes In a Loop )
-```js
-   init({
+####Pause
+<pre><code>
+   demo = new minBlock({
           divId          : CanvasId,
           time           : 300,
+          numBlocks      : number of blocks per edge
           randomColor    : true,
           colorPrimary   : primaryColor,
           colorSecondary : secondaryColor,
           pause: true
         });
+</code></pre>
 
-
-  ```
-
-#Not Yet Implemented
-1. Making it Sensitive for nxn Matrix
+#Todos
+1. ~~Making it Sensitive for nxn MatrixFF~~ [by @GreenLantern101](https://github.com/GreenLantern101)
 2. ~~Simplifying Arguments To JSON format~~ [by @alvaropinot](https://github.com/alvaropinot)
-
-
