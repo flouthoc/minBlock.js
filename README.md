@@ -12,7 +12,7 @@ http://flouthoc.github.io/minBlock.js/
 ```
 
 #### Random Color:
-<pre><code>
+```
   demo = new minBlock({
         divId          : canvasID,
         time           : timefortransition,
@@ -22,10 +22,10 @@ http://flouthoc.github.io/minBlock.js/
         colorSecondary : SecondaryColor
   });
   // "time" defines the Delay between two transitions
-</code></pre>
+```
 
 #### Fixed Color:
-<pre><code>
+```
   demo = new minBlock({
         divId          : canvasID,
         time           : timefortransition,
@@ -34,10 +34,10 @@ http://flouthoc.github.io/minBlock.js/
         colorPrimary   : PrimaryColor,
         colorSecondary : SecondaryColor
   });
-</code></pre>
+```
 
 #### Pause:
-<pre><code>
+```
   demo = new minBlock({
         divId          : CanvasId,
         time           : 300,
@@ -47,7 +47,7 @@ http://flouthoc.github.io/minBlock.js/
         colorSecondary : secondaryColor,
         pause: true
   });
-</code></pre>
+```
 
 ## Todos
 1. ~~Making it Sensitive for nxn MatrixFF~~ [by @GreenLantern101](https://github.com/GreenLantern101)
