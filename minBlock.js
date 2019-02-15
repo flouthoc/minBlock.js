@@ -83,9 +83,14 @@ var minBlock = function (config) {
     //fill the canvas with blocks at random positions
     function randFill(color) {
         var numBlocksReplace = getRandomInt(options.blocksPerEdge * options.blocksPerEdge * .25, options.blocksPerEdge * options.blocksPerEdge * .75);
-        for (var i = 0; i < numBlocksReplace; i++) {
-            var coordinate = getLocation(getRandomInt(0, options.blocksPerEdge * options.blocksPerEdge - 1));
-            drawSquare(color, coordinate[1], coordinate[0]);
+        var replacedBlocks = [];
+        while (replacedBlocks.length < numBlocksReplace) {
+            var rand = getRandomInt(0, options.blocksPerEdge * options.blocksPerEdge - 1);
+            if (replacedBlocks.indexOf(rand) === -1) {
+                var coordinate = getLocation(rand);
+                drawSquare(color, coordinate[1], coordinate[0]);
+                replacedBlocks.push(rand);
+            }
         }
     }
 
