@@ -11,42 +11,58 @@ http://flouthoc.github.io/minBlock.js/
 <script type="text/javascript" src="https://raw.githubusercontent.com/flouthoc/minBlock.js/master/minBlock.js"></script>
 ```
 
-#### Random Color:
+Only the option canvasID is required.
+
 ```
-  demo = new minBlock({
-        divId          : canvasID,
-        time           : timefortransition,
-        numBlocks      : number of blocks per edge,
-        randomColor    : true,
-        colorPrimary   : PrimaryColor,
-        colorSecondary : SecondaryColor
-  });
-  // "time" defines the Delay between two transitions
+new minBlock(canvasID: String);
+```
+or
+```
+new minBlock({
+  blocksPerEdge: Number, // default -> 5
+  canvasID: String, // required
+  color: {
+      primary: String,
+      secondary: String
+  }, // default -> a pair of random colors
+  padding: Number, // default -> 20
+  spacing: Number // default -> 0
+});
 ```
 
-#### Fixed Color:
-```
-  demo = new minBlock({
-        divId          : canvasID,
-        time           : timefortransition,
-        numBlocks      : number of blocks per edge,
-        randomColor    : false,
-        colorPrimary   : PrimaryColor,
-        colorSecondary : SecondaryColor
-  });
+#### In Html:
+```html
+<script type='text/javascript' src='https://raw.githubusercontent.com/flouthoc/minBlock.js/master/minBlock.js'></script>
 ```
 
-#### Pause:
+#### Where to put it:
+```html
+<html>
+  <head>
+    <script type='text/javascript' src='minBlock.js'></script>
+  </head>
+  <body>
+    <canvas id='myCanvas' width='500' height='500'></canvas>
+
+    <script type='text/javascript'>
+      new minBlock('myCanvas');
+    </script>
+  </body>
+</html>
 ```
-  demo = new minBlock({
-        divId          : CanvasId,
-        time           : 300,
-        numBlocks      : number of blocks per edge,
-        randomColor    : true,
-        colorPrimary   : primaryColor,
-        colorSecondary : secondaryColor,
-        pause: true
-  });
+
+#### Working with optional parameters:
+```javascript
+new minBlock({
+  canvasID: 'myCanvas',
+  blocksPerEdge: 4,
+  color: {
+    primary: '#27ae60',
+    secondary: '#2ecc71'
+  },
+  padding: 0,
+  spacing: 2
+});
 ```
 
 ## Todos
