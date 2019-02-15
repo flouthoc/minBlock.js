@@ -15,11 +15,13 @@ var minBlock = function (config) {
 
     var options = {};
 
-    if (typeof config !== "object" || !config.canvasID) {
+    if (typeof config === "string") {
+        options.canvasID = config;
+    } else if (typeof config !== "object" || !config.canvasID) {
         return;
     }
 
-    options.canvasID = config.canvasID;
+    options.canvasID = options.canvasID || config.canvasID;
     options.blocksPerEdge = Math.max(config.blocksPerEdge || 5, 3);
     options.padding = (typeof config.padding === "number") ? config.padding : 20;
     options.color = (typeof options.color === "object") ? config.color : getRandomColorPair();
