@@ -126,18 +126,24 @@
           </a>
         </center>
         <p>
-          Implemented by slightly modifying the init() function
+          only the option canvasID is required.
         </p>
         <pre>
 <code class="javascript">
-init({
-          divId          : CanvasId,
-          time           : 300,
-          randomColor    : false,
-          colorPrimary   : primaryColor,
-          colorSecondary : secondaryColor,
-          pause: true
-        });
+new minBlock(canvasID: String);
+
+// or
+  
+new minBlock({
+  blocksPerEdge: Number, // default -> 5
+  canvasID: String, // required
+  color: {
+      primary: String,
+      secondary: String
+  }, // default -> a pair of random colors
+  padding: Number, // default -> 20
+  spacing: Number // default -> 0
+});
 </code>
 </pre>
 
@@ -160,58 +166,36 @@ init({
 <code class="xml">
 &#x3C;html&#x3E;
   &#x3C;head&#x3E;
-    &#x3C;script type='text/javascript' src='index.js'&#x3E;
-    &#x3C;/script&#x3E;
+    &#x3C;script type='text/javascript' src='index.js'&#x3E;&#x3C;/script&#x3E;
   &#x3C;/head&#x3E;
   &#x3C;body&#x3E;
     &#x3C;canvas id='myCanvas' width=500 height=500&#x3E;&#x3C;/canvas&#x3E;
 
     &#x3C;script type='text/javascript'&#x3E;
-      init(myCanvas,300);
+      new minBlock('myCanvas');
     &#x3C;/script&#x3E;
   &#x3C;/body&#x3E;
 &#x3C;/html&#x3E;
 </code>
 </pre>
       </div>
+
       <div class="col-md-12">
         <h2>
-          Regular
+          Working with optional parameters
         </h2>
         <pre>
 <code class="javascript">
-init({
-        divId          : canvasID,
-        time           : timefortransition,
-        randomColor    : false,
-      });
-</code>
-</pre>
-        <p>
-          This Basic Example of minBlock . The first argument Contains the ID of the canvas Division while the second
-          argument is time in milliseconds which is responsible for transition between two pattern.
-        </p>
-
-      </div>
-
-      <div class="col-md-12">
-        <h1>
-          For Fixed Color
-        </h1>
-        <p>
-          init(); can be modified easily as it is the start function and independant of rest of the function and
-          arguments.
-        </p>
-        <pre>
-<code class="javascript">
-  init({
-        divId          : canvasID,
-        time           : timefortransition,
-        randomColor    : true,
-        colorPrimary   : PrimaryColor,
-        colorSecondary : SecondaryColor'
-      });
-
+new minBlock({
+  canvasID: 'myCanvas',
+  blocksPerEdge: 4,
+  color: {
+    primary: '#27ae60',
+    secondary: '#2ecc71'
+  },
+  padding: 0,
+  spacing: 2
+});
 </code>
 </pre>
 
@@ -257,13 +241,9 @@ init({
   </script>
   <script type="text/javascript">
     function change() {
-      demo2 = new minBlock({
+      new minBlock({
         canvasID: 'myCanvasTwo',
-        numBlocks: 5,
-        color: {
-          primary: '#27ae60',
-          secondary: '#2ecc71'
-        }
+        blocksPerEdge: 4
       });
     }
     window.onload = function () {
