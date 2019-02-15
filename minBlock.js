@@ -25,7 +25,7 @@ var minBlock = function (config) {
     options.blocksPerEdge = Math.max(config.blocksPerEdge || 5, 3);
     options.padding = (typeof config.padding === "number") ? config.padding : 20;
     options.spacing = (typeof config.spacing === "number") ? config.spacing : 0;
-    options.color = (typeof options.color === "object") ? config.color : getRandomColorPair();
+    options.color = (typeof config.color === "object") ? config.color : getRandomColorPair();
 
     var canvas = document.getElementById(options.canvasID);
     var canvasWidth = canvas.width;
