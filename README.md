@@ -8,7 +8,7 @@ http://flouthoc.github.io/minBlock.js/
 ## Usage
 #### Getting Started:
 ```html
-<script type="text/javascript" src="https://raw.githubusercontent.com/flouthoc/minBlock.js/master/index.js"></script>
+<script type="text/javascript" src="https://raw.githubusercontent.com/flouthoc/minBlock.js/master/minBlock.js"></script>
 ```
 
 #### Random Color:
