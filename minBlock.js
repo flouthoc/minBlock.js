@@ -24,6 +24,7 @@ var minBlock = function (config) {
     options.canvasID = options.canvasID || config.canvasID;
     options.blocksPerEdge = Math.max(config.blocksPerEdge || 5, 3);
     options.padding = (typeof config.padding === "number") ? config.padding : 20;
+    options.spacing = (typeof config.spacing === "number") ? config.spacing : 0;
     options.color = (typeof options.color === "object") ? config.color : getRandomColorPair();
 
     var canvas = document.getElementById(options.canvasID);
@@ -58,7 +59,7 @@ var minBlock = function (config) {
         var y = options.padding + (matrixY * squareHeight);
         ctx.beginPath();
         ctx.fillStyle = color;
-        ctx.rect(x, y, squareWidth, squareHeight);
+        ctx.rect(x + options.spacing, y + options.spacing, squareWidth - options.spacing * 2, squareHeight - options.spacing * 2);
         ctx.fill();
         ctx.closePath();
     }
