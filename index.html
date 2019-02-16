@@ -41,33 +41,42 @@
   <div id="head" class="col-md-12">
 
     <a href="https://github.com/flouthoc/minBlock.js">
-      <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67"
-          alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+      <img style="position: absolute; top: 0; right: 0; border: 0;"
+        src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67"
+        alt="Fork me on GitHub"
+        data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
+    </a>
   </div>
 
   <!-- Main jumbotron for a primary marketing message or call to action -->
   <div class="jumbotron">
     <div class="container">
       <h1>
-          minBlock.js
-        </h1>
+        minBlock.js
+      </h1>
       <p>
-        Is a Pure Javascript Canvas Implementation of Matrix Grid ( Primary Application was to Generate Github Like Random Avatar or Pixel Pattern)
+        Is a Pure Javascript Canvas Implementation of Matrix Grid ( Primary Application was to Generate Github Like
+        Random Avatar or Pixel Pattern)
       </p>
       <div class="col-md-12">
         <table>
           <tr>
             <td>
-              <iframe src="http://ghbtns.com/github-btn.html?user=flouthoc&repo=minBlock.js&type=watch&size=large" height="30" width="100" frameborder="0" scrolling="0" style="width:100px; height: 30px;" allowTransparency="true">
-                </iframe>
+              <iframe src="http://ghbtns.com/github-btn.html?user=flouthoc&repo=minBlock.js&type=watch&size=large"
+                height="30" width="100" frameborder="0" scrolling="0" style="width:100px; height: 30px;"
+                allowTransparency="true">
+              </iframe>
             </td>
             <td>
-              <iframe src="http://ghbtns.com/github-btn.html?user=flouthoc&repo=minBlock.js&type=fork&size=large" height="30" width="100" frameborder="0" scrolling="0" style="width:100px; height: 30px;" allowTransparency="true">
-                </iframe>
+              <iframe src="http://ghbtns.com/github-btn.html?user=flouthoc&repo=minBlock.js&type=fork&size=large"
+                height="30" width="100" frameborder="0" scrolling="0" style="width:100px; height: 30px;"
+                allowTransparency="true">
+              </iframe>
             </td>
             <td>
-              <iframe src="http://ghbtns.com/github-btn.html?user=flouthoc&type=follow&size=large" height="30" width="240" frameborder="0" scrolling="0" style="width:240px; height: 30px;" allowTransparency="true">
-                </iframe>
+              <iframe src="http://ghbtns.com/github-btn.html?user=flouthoc&type=follow&size=large" height="30"
+                width="240" frameborder="0" scrolling="0" style="width:240px; height: 30px;" allowTransparency="true">
+              </iframe>
             </td>
           </tr>
         </table>
@@ -78,8 +87,8 @@
       <center>
         <div id="col-md-12">
           <centre>
-            <canvas id="myCanvas" width="510" height="510">
-              </canvas>
+            <canvas id="myCanvas" width="500" height="500">
+            </canvas>
           </centre>
         </div>
 
@@ -92,114 +101,101 @@
     <div class="row">
       <div class="col-md-12">
         <center>
-          <a href="https://raw.githubusercontent.com/flouthoc/minBlock.js/master/minBlock.js" class="btn btn-primary btn-lg">
-              Download Latest Version
-            </a>
+          <a href="https://raw.githubusercontent.com/flouthoc/minBlock.js/master/minBlock.js"
+            class="btn btn-primary btn-lg">
+            Download Latest Version
+          </a>
         </center>
       </div>
       <div class="col-md-12">
         <h1>
-            <b>
-              Github-like Avatar Implementation (Not Accurate)
-            </b>
+          <b>
+            Github-like Avatar Implementation (Not Accurate)
+          </b>
         </h1>
         <center>
           <div class="col-md-12">
             <centre>
-              <canvas id="myCanvasTwo" width="510" height="510">
+              <canvas id="myCanvasTwo" width="500" height="500">
               </canvas>
             </centre>
           </div>
           <br>
           <a onclick="change()" class="btn btn-default btn-lg">
-              Change
-            </a>
+            Change
+          </a>
         </center>
         <p>
-          Implemented by slightly modifying the init() function
+          only the option canvasID is required.
         </p>
         <pre>
 <code class="javascript">
-init({
-          divId          : CanvasId,
-          time           : 300,
-          randomColor    : false,
-          colorPrimary   : primaryColor,
-          colorSecondary : secondaryColor,
-          pause: true
-        });
+new minBlock(canvasID: String);
+
+// or
+  
+new minBlock({
+  blocksPerEdge: Number, // default -> 5
+  canvasID: String, // required
+  color: {
+      primary: String,
+      secondary: String
+  }, // default -> a pair of random colors
+  padding: Number, // default -> 20
+  spacing: Number // default -> 0
+});
 </code>
 </pre>
 
       </div>
       <div class="col-md-12">
         <h2>
-            In Html
+          In Html
         </h2>
         <pre>
 <code class="xml">
-&lt;script type=='text/javascript' src='https://raw.githubusercontent.com/flouthoc/minBlock.js/master/index.js'&gt;&lt;/script&gt;
+&lt;script type='text/javascript' src='https://raw.githubusercontent.com/flouthoc/minBlock.js/master/minBlock.js'&gt;&lt;/script&gt;
 </code>
 </pre>
       </div>
       <div class="col-md-12">
         <h2>
-            Where To Put It
-          </h2>
+          Where To Put It
+        </h2>
         <pre>
 <code class="xml">
 &#x3C;html&#x3E;
   &#x3C;head&#x3E;
-    &#x3C;script type='text/javascript' src='index.js'&#x3E;
-    &#x3C;/script&#x3E;
+    &#x3C;script type='text/javascript' src='minBlock.js'&#x3E;&#x3C;/script&#x3E;
   &#x3C;/head&#x3E;
   &#x3C;body&#x3E;
-    &#x3C;canvas id='myCanvas' width=510 height=510&#x3E;&#x3C;/canvas&#x3E;
+    &#x3C;canvas id='myCanvas' width=500 height=500&#x3E;&#x3C;/canvas&#x3E;
 
     &#x3C;script type='text/javascript'&#x3E;
-      init(myCanvas,300);
+      new minBlock('myCanvas');
     &#x3C;/script&#x3E;
   &#x3C;/body&#x3E;
 &#x3C;/html&#x3E;
 </code>
 </pre>
       </div>
+
       <div class="col-md-12">
         <h2>
-            Regular
-          </h2>
+          Working with optional parameters
+        </h2>
         <pre>
 <code class="javascript">
-init({
-        divId          : canvasID,
-        time           : timefortransition,
-        randomColor    : false,
-      });
-</code>
-</pre>
-        <p>
-          This Basic Example of minBlock . The first argument Contains the ID of the canvas Division while the second argument is time in milliseconds which is responsible for transition between two pattern.
-        </p>
-
-      </div>
-
-      <div class="col-md-12">
-        <h1>
-            For Fixed Color
-           </h1>
-        <p>
-          init(); can be modified easily as it is the start function and independant of rest of the function and arguments.
-        </p>
-        <pre>
-<code class="javascript">
-  init({
-        divId          : canvasID,
-        time           : timefortransition,
-        randomColor    : true,
-        colorPrimary   : PrimaryColor,
-        colorSecondary : SecondaryColor'
-      });
-
+new minBlock({
+  canvasID: 'myCanvas',
+  blocksPerEdge: 4,
+  color: {
+    primary: '#27ae60',
+    secondary: '#2ecc71'
+  },
+  padding: 0,
+  spacing: 2
+});
 </code>
 </pre>
 
@@ -207,8 +203,8 @@ init({
 
       <div class="col-md-12">
         <h2>
-            To-Do's (Not Yet Implemented)
-         </h2>
+          To-Do's (Not Yet Implemented)
+        </h2>
 
         <p>
           1.) Making it Sensitive for nxn Matrix
@@ -232,28 +228,25 @@ init({
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
   </script>
   <script type="text/javascript">
-    demo1 = new minBlock({
-      divId: 'myCanvas',
-      time: 500,
-      numBlocks: 1,
-      randomColor: true,
-      colorPrimary: '#27ae60',
-      colorSecondary: '#2ecc71'
-    });
+    setInterval(function () {
+      new minBlock({
+        canvasID: 'myCanvas',
+        blocksPerEdge: 4,
+        color: {
+          primary: '#27ae60',
+          secondary: '#2ecc71'
+        }
+      });
+    }, 500);
   </script>
   <script type="text/javascript">
     function change() {
-      demo2 = new minBlock({
-        divId: 'myCanvasTwo',
-        time: 500,
-        numBlocks: 5,
-        randomColor: false,
-        colorPrimary: '#27ae60',
-        colorSecondary: '#2ecc71',
-        pause: true
+      new minBlock({
+        canvasID: 'myCanvasTwo',
+        blocksPerEdge: 4
       });
     }
-    window.onload = function() {
+    window.onload = function () {
       change();
     }
   </script>

@@ -15,9 +15,13 @@
 
 <body>
   <br><br>
-  <center><canvas id="myCanvas" width="510" height="510"></canvas></center>
+  <center><canvas id="myCanvas" width="500" height="500"></canvas></center>
   <script type="text/javascript">
-    init('myCanvas', 200);
+    demo = new minBlock({
+      canvasID: "myCanvas",
+      blocksPerEdge: 5,
+      padding: 0
+    });
   </script>
 </body>
 
