@@ -46,11 +46,11 @@ var minBlock = function (config) {
 
     //fills entire matrix a single color
     function fillMatrix(color) {
-        for (var i = 0; i < options.blocksPerEdge; i++) {
-            for (var j = 0; j < options.blocksPerEdge; j++) {
-                drawSquare(color, j, i);
-            }
-        }
+        ctx.beginPath();
+        ctx.fillStyle = color;
+        ctx.rect(0, 0, canvasWidth, canvasHeight);
+        ctx.fill();
+        ctx.closePath();
     }
 
     //draws a single color square
