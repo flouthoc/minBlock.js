@@ -55,11 +55,13 @@ var minBlock = function (config) {
 
     //draws a single color square
     function drawSquare(color, matrixX, matrixY) {
-        var x = options.padding + (matrixX * squareWidth);
-        var y = options.padding + (matrixY * squareHeight);
+        var x = Math.floor(options.padding + (matrixX * squareWidth) + options.spacing);
+        var y = Math.floor(options.padding + (matrixY * squareHeight) + options.spacing);
+        var w = Math.ceil(squareWidth - options.spacing * 2);
+        var h = Math.ceil(squareHeight - options.spacing * 2);
         ctx.beginPath();
         ctx.fillStyle = color;
-        ctx.rect(x + options.spacing, y + options.spacing, squareWidth - options.spacing * 2, squareHeight - options.spacing * 2);
+        ctx.rect(x, y, w, h);
         ctx.fill();
         ctx.closePath();
     }
